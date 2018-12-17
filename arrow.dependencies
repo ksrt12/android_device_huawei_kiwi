@@ -10,5 +10,9 @@
   {
     "repository": "android_packages_resources_devicesettings",
     "target_path": "packages/resources/devicesettings"
+  },
+  {
+    "repository": "aarch64-linux-android",
+    "target_path": "prebuilts/gcc/linux-x86/aarch64/aarch64-opt-linux-android"
   }
 ]
