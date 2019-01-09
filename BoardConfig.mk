@@ -25,7 +25,7 @@ TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a53
 
 TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_ARCH_VARIANT := armv8-a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
@@ -41,8 +41,9 @@ TARGET_OTA_ASSERT_DEVICE := kiwi
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk androidboot.selinux=permissive
-BOARD_KERNEL_CMDLINE += ro.boot.btmacaddr=00:00:00:00:00:00
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci
+BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 earlyprintk ro.boot.btmacaddr=00:00:00:00:00:00
+#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
@@ -51,10 +52,10 @@ BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
 TARGET_KERNEL_SOURCE := kernel/huawei/kiwi
 TARGET_KERNEL_ARCH := arm64
-KERNEL_TOOLCHAIN := $(PWD)/prebuilts/gcc/linux-x86/aarch64/aarch64-opt-linux-android/bin
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-opt-linux-android-
-TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CONFIG := kiwi-64_defconfig
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+KERNEL_TOOLCHAIN := /home/ksrt12/UBERTC/out/aarch64-linux-android-8.x/bin
 
 # Audio
 AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE := true

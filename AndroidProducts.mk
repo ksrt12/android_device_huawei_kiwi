@@ -14,5 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_kiwi.mk \
-    $(LOCAL_DIR)/arrow_kiwi.mk
+    $(LOCAL_DIR)/havoc_kiwi.mk

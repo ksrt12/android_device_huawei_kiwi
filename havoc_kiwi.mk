@@ -1,11 +1,10 @@
-#
-# Copyright (C) 2014 The CyanogenMod Project
+# Copyright (C) 2019 HavocOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,7 +22,15 @@ $(call inherit-product, device/huawei/kiwi/device.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := kiwi
-PRODUCT_NAME := full_kiwi
+PRODUCT_NAME := havoc_kiwi
 PRODUCT_BRAND := HONOR
-PRODUCT_MODEL := KIW-L24
+PRODUCT_MODEL := KIW-L21
 PRODUCT_MANUFACTURER := HUAWEI
+TARGET_VENDOR := huawei
+
+PRODUCT_GMS_CLIENTID_BASE := android-huawei
+
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# Inherit some common Havoc stuff.
+$(call inherit-product, vendor/havoc/config/common.mk)
